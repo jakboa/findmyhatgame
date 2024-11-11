@@ -1,0 +1,12 @@
+.gameBoard {
+    border: solid black 10px;
+    width: 80%;
+}
+
+.gameBoardRow {
+    width: 80%;
+}
+
+.gameBoardTile {
+    width: 10%;
+}
