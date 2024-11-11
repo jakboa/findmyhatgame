@@ -12,9 +12,9 @@ export default function GameBoard ( { playingField } ) {
         <div className='gameBoard'>
             <p>THIS IS GAME BOARD</p>
             {playingField.map((row, rowIndex) => (
-                    <div key={rowIndex} className="gameBoardRow">
-                        {row.map((tile, tileIndex) => (
-                            <GamePiece key={tileIndex} picture={tile} />
+                <div key={rowIndex} className="gameBoardRow">
+                    {row.map((tile, tileIndex) => (
+                        <GamePiece key={tileIndex} picture={tile} />
                     ))}
                 </div>
             ))}

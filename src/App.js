@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import GameBoard from './states/GameBoard';
 import Controlls from './states/Controlls';
-import { GameEngine, Field, SYMBOLS } from './GameLogic';
+import { Field, SYMBOLS } from './GameLogic';
 
 
 const images = require.context('./pictures', false, /\.(png|jpe?g|svg)$/);
@@ -17,10 +17,6 @@ function App() {
   const [playerPosition, setPlayerPosition] = useState([0,0]);
   const [feedback, setFeedback] = useState('GoodLuck!')
 
-  useEffect(() => {
-    // This will run after playerPosition has been updated
-    updateGameState(); 
- }, [playerPosition]); 
 
 
 
@@ -60,18 +56,19 @@ function App() {
         newField[playerPosition[0]][playerPosition[1]] = SYMBOLS.PATH; 
         return newField;  
       });
-
-
     }
+  };
 
-}
-
+  useEffect(() => {
+    console.log('Player Position Updated:', playerPosition);
+    updateGameState(playerPosition);
+  }, [playerPosition]);
 
 
   return (
     <div className="App">
       <GameBoard playingField={playField} />
-      <p>{feedback}!</p>
+      <p>{feedback}</p>
       <Controlls isPlaying={ playingGame } generateField={ onChangeGameMap } movePlayer={ playerControlls }  />
       <img src={images('./Grass.png')} alt='GrassPicture' />
       <img src={images('./Player.png')} alt='GrassPicture' /><br />

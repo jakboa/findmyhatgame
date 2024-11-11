@@ -104,8 +104,8 @@ class GameEngine {
 }
 
 
-const myField = Field.generateField(5, 20);
-const game = new GameEngine(myField);
+//const myField = Field.generateField(5, 20);
+//const game = new GameEngine(myField);
 //game.play();
 
 
