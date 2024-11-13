@@ -23,7 +23,8 @@ function App() {
   const onChangeGameMap = () => {
     setPlayField(Field.generateField(6, 20).arena);
     setPlayerPosition([0,0]);
-    setFeedback('newgame good luck!');
+    setFeedback('New game! Good luck!');
+    setPlayingGame(true);
   }; 
 
   const playerControlls = (move) => {
