@@ -21,7 +21,7 @@ function App() {
 
 
   const onChangeGameMap = () => {
-    setPlayField(Field.generateField(6, 20).arena);
+    setPlayField(Field.generateField(5, 5).arena);
     setPlayerPosition([0,0]);
     setFeedback('New game! Good luck!');
     setPlayingGame(true);
@@ -32,6 +32,11 @@ function App() {
     const [nextY, nextX] = [playerPosition[0] + dy, playerPosition[1] + dx];
 
     if (nextY >= 0 && nextY < playField.length && nextX >= 0 && nextX < playField[nextY].length) {
+      setPlayField(prevField => {
+        const newField = [...prevField];  
+        newField[playerPosition[0]][playerPosition[1]] = SYMBOLS.PATH; 
+        return newField;  
+      });
         setPlayerPosition([playerPosition[0] + dy, playerPosition[1] + dx]);
         console.log(playerPosition);
         updateGameState();
@@ -54,7 +59,7 @@ function App() {
 
       setPlayField(prevField => {
         const newField = [...prevField];  
-        newField[playerPosition[0]][playerPosition[1]] = SYMBOLS.PATH; 
+        newField[playerPosition[0]][playerPosition[1]] = SYMBOLS.PLAYER; 
         return newField;  
       });
     }

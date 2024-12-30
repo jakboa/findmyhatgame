@@ -2,14 +2,14 @@
 
 
 import grassImage from './pictures/Grass.png';
-//import playerImage from './pictures/Player.png';
+import playerImage from './pictures/Player.png';
 import pitImage from './pictures/Pit.png';
 import roadImage from './pictures/Road.png';
 import hatImage from './pictures/Hat.png';
 
 
 
-const SYMBOLS = { HAT: hatImage, HOLE: pitImage, FIELD: grassImage, PATH: roadImage };
+const SYMBOLS = { HAT: hatImage, HOLE: pitImage, FIELD: grassImage, PATH: roadImage, PLAYER: playerImage };
 const DIRECTIONS = { w: [-1, 0], a: [0, -1], s: [1, 0], d: [0, 1] };
 
 
